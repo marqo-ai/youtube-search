@@ -1,4 +1,4 @@
-## YouTube Video and Audio Search
+# YouTube Video and Audio Search
 This repository performs searches over content that appears in YouTube videos. This demo uses Marqo's YouTube channel to search for relevant video clips. It will then direct you to that specific timestamp on YouTube. 
 
 <p align="center">
