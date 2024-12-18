@@ -3,3 +3,4 @@ moviepy
 pytube
 config
 marqo
+pandas

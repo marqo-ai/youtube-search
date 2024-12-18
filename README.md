@@ -1,5 +1,9 @@
-## YouTube Video and Audio Search
+# YouTube Video and Audio Search
 This repository performs searches over content that appears in YouTube videos. This demo uses Marqo's YouTube channel to search for relevant video clips. It will then direct you to that specific timestamp on YouTube. 
+
+<p align="center">
+    <a><img src="https://github.com/marqo-ai/youtube-search/blob/main/assets/youtube-search.gif"></a>
+</p>
 
 Note, this demo uses already chunked data that is hosted online. If you want to do this for your own YouTube videos, we have provided the code that downloads a YouTube playlist and chunks the data for you. It is then up to you to host these files somewhere. We recommend using AWS S3 buckets. 
 
@@ -41,6 +45,7 @@ For peace of mind, we encourage you to check that all of the URLs in the `video_
 ```bash
 python3 data/test_urls.py
 ```
+The terminal will only populate with URLs if an error has occurred. 
 ## Step 4: Set up Marqo Index
 Now we have all of our data, we can set up a Marqo index and begin adding these video files to our index. 
 
@@ -57,7 +62,15 @@ Next, we can create our index:
 python3 marqo/create_index.py
 ```
 
-This may take a few minutes to create. You can see the status of your index in the [Marqo Cloud Console](https://cloud.marqo.ai/indexes). 
+This may take a few minutes to create. You can see the status of your index in the [Marqo Cloud Console](https://cloud.marqo.ai/indexes):
+
+Your terminal will also begin populating:
+```bash
+2024-12-18 16:13:44,437 logger:'marqo' INFO Current index status: IndexStatus.CREATING
+2024-12-18 16:13:55,621 logger:'marqo' INFO Current index status: IndexStatus.CREATING
+2024-12-18 16:14:06,816 logger:'marqo' INFO Current index status: IndexStatus.CREATING
+...
+```
 
 ### Add Documents to Marqo Index
 Once your index is successfully created, you can begin adding documents to your index. If you index creation failed for whatever reason, reach out to us on our [Slack Community](https://join.slack.com/t/marqo-community/shared_invite/zt-2b4nsvbd2-TDf8agPszzWH5hYKBMIgDA) where a member of our team can help. 
