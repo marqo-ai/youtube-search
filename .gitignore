@@ -1,0 +1,16 @@
+# Virutal Environment
+.venv
+
+# Environment Variables
+.env
+
+# Downloaded YouTube footage
+preprocessing/raw_youtube_videos
+preprocessing/video_chunks
+
+# DS Store
+.DS_Store
+
+# Any left over mp4 files
+*.mp4
+*.mp3

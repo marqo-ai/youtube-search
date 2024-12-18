@@ -1,0 +1,5 @@
+yt_dlp
+moviepy
+pytube
+config
+marqo
