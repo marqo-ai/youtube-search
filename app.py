@@ -3,9 +3,8 @@ from marqo import Client
 import os
 from dotenv import load_dotenv
 import re
-import json
 import csv
-from marqo import config
+import config
 
 # Set full-screen page layout
 st.set_page_config(page_title="Marqo YouTube Video Search App", layout="wide")
@@ -56,9 +55,11 @@ def search_videos(query):
     try:
         index_name = config.INDEX_NAME
         res = mq.index(index_name).search(query)
+        print(res['hits'][0])
         video_urls = [result.get('video_field') for result in res.get('hits', [])[:6]]
         return video_urls
     except Exception as e:
+        print(e)
         return []
 
 # Streamlit app layout
@@ -66,7 +67,7 @@ st.title("Marqo YouTube Video Search")
 st.text("Perform visual and audio searches over YouTube videos. This demo uses Marqo's YouTube channel to search for relevant information and will direct you to the corresponding timestamp in the YouTube video.")
 st.text("Examples: \"What are embedding models?\", \"Marqo API Key?\", \" Demo Presentation?\"")
 
-query = st.text_input("Input your query...", "what are embedding models?")
+query = st.text_input("Input your query...", "fun fact")
 
 if st.button("Search") and query:
     with st.spinner("Fetching videos..."):

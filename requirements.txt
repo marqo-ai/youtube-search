@@ -4,3 +4,4 @@ pytube
 config
 marqo
 pandas
+streamlit
