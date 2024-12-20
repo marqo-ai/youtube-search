@@ -1,5 +1,5 @@
 # YouTube Video and Audio Search
-This repository performs searches over content that appears in YouTube videos. This demo uses Marqo's YouTube channel to search for relevant video clips. It will then direct you to that specific timestamp on YouTube. 
+This repository performs searches over content that appears in YouTube videos. This demo uses Marqo's YouTube channel to search for relevant video clips. It will then direct you to that specific timestamp on YouTube.
 
 <p align="center">
     <a><img src="https://github.com/marqo-ai/youtube-search/blob/main/assets/youtube-search.gif"></a>
@@ -31,6 +31,8 @@ Enter your YouTube playlist when prompted to do so.
 This will first begin downloading your YouTube video(s) and placing them into the folder `processing/raw_youtube_videos`. Once all videos have been downloaded to this folder, it will begin chunking them into 20 second splits and placing these into the `processing/video_chunks`. This is needed when loading the video files into Marqo ready to perform video and audio searches. 
 
 ## Step 3: (Optional) Hosting Your YouTube Videos
+This step is optional. If you are happy using Marqo's youtube videos to build this project then you can jump straight to Step 4.
+
 To load these video files into Marqo, they need to be hosted at a URL address so Marqo can successfully retrieve them. For this demo, we hosted our YouTuube videos using an AWS S3 Bucket. Feel free to use whichever hosting platform you'd like, just ensure the URL ends in `.mp4` and is publicly accessible so Marqo can access and retrieve it.
 
 Once you have hosted your YouTube videos, we need to create the data CSV file that will be fed into Marqo. This keeps track of all URLs. First, obtain the starting URL to your videos. In our example, our videos are hosted at `https://marqo-tutorial-public.s3.us-west-2.amazonaws.com/youtube-search-demo/marqo-youtube-videos-chunked/` and so, we append each video title in `video_chunks` to this URL and store them in a CSV, for each video.
